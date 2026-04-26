@@ -1,3 +1,11 @@
 {
   "version": 2
+  frontend/
+  pages/
+    index.js
+    dashboard.js
+    login.js
+  components/
+    Sidebar.js
+    PostForm.js
 }
