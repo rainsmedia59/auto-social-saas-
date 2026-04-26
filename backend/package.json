@@ -13,3 +13,4 @@
     "start": "node server.js"
   }
 }
+"node-fetch": "^3.3.2"
