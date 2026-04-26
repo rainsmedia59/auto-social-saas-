@@ -4,7 +4,7 @@ export default function Dashboard() {
   const [result, setResult] = useState(null);
 
   const createPost = async () => {
-    const res = await fetch("https://YOUR-RAILWAY-URL/api/post", {
+    const res = await fetch("https://auto-social-saas-production.up.railway.app/api/post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
