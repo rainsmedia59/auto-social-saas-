@@ -33,3 +33,24 @@ router.post("/login", async (req, res) => {
 });
 
 export default router;
+
+import crypto from "crypto";
+
+router.post("/signup", async (req, res) => {
+  const { email, password } = req.body;
+
+  const hash = await bcrypt.hash(password, 10);
+
+  const apiKey = "key_" + crypto.randomBytes(16).toString("hex");
+
+  users.push({
+    email,
+    password: hash,
+    apiKey
+  });
+
+  res.json({
+    message: "User created",
+    apiKey
+  });
+});
