@@ -1,38 +1,16 @@
-import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
-  const [response, setResponse] = useState(null);
-
-  const sendPost = async () => {
-    const res = await fetch("https://auto-social-saas-production.up.railway.app/api/post", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": "demo_key_123"
-      },
-      body: JSON.stringify({
-        title: "Breaking News",
-        content: "Something big happened",
-        url: "https://example.com",
-        category: "news"
-      })
-    });
-
-    const data = await res.json();
-    setResponse(data);
-  };
+  const router = useRouter();
 
   return (
-    <div style={{ padding: 40 }}>
+    <div style={{ textAlign: "center", padding: 80 }}>
       <h1>Auto Social SaaS</h1>
+      <p>AI-powered social media automation platform</p>
 
-      <button onClick={sendPost}>
-        Send Test Post 🚀
+      <button onClick={() => router.push("/login")}>
+        Get Started
       </button>
-
-      {response && (
-        <pre>{JSON.stringify(response, null, 2)}</pre>
-      )}
     </div>
   );
 }
