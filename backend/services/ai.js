@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export async function generateAI(title, content, url, category) {
   const prompt = `
   Create viral social media captions for:
